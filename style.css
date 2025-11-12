@@ -1,0 +1,138 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f2f2f2;
+  color: #222;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Menu lateral */
+nav {
+  width: 220px;
+  background-color: #121212;
+  color: #eee;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+nav a {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+nav a.active {
+  background-color: #555;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Container principal (ajustado para o nav fixo) */
+.main-content {
+  margin-left: 220px;           /* Espaço pro menu lateral */
+  margin-top: 20vh;             /* Espaço em cima */
+  margin-bottom: 20vh;          /* Espaço embaixo */
+  padding: 20px 40px;
+  width: calc(97% - 220px);    /* Ocupa o restante da tela */
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 40vh;                 /* <-- altura mais fina da caixa */
+  align-items: center;          /* Centraliza imagem e texto verticalmente */
+}
+
+
+
+/* Texto e imagem lado a lado */
+.text-content {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222;
+}
+
+.main-content img {
+  flex: 1;
+  max-width: 90%;
+  height: 85%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+h1 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #111;
+}
+
+/* Parágrafos */
+p {
+  margin-bottom: 15px;
+}
+
+/* Links e interatividade */
+a {
+  cursor: pointer;
+}
+
+/* Responsividade simples */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  nav a {
+    padding: 10px 15px;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .main-content img {
+    margin-top: 20px;
+  }
+}
